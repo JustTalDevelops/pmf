@@ -107,10 +107,10 @@ func (p *Level) Convert(prov *mcdb.Provider) error {
 
 			data := map[string]interface{}{
 				"id":                          "Sign",
-				"SignTextColor":               int32(-0x1000000),                                             // Colour for black text, since text dye wasn't a thing back then.
-				"IgnoreLighting":              boolByte(false),                                               // Glowing text didn't exist, so we set this to false.
-				"TextIgnoreLegacyBugResolved": boolByte(false),                                               // Same here.
-				"Text":                        textOne + "\n" + textTwo + "\n" + textThree + "\n" + textFour, // Merge the text.
+				"SignTextColor":               int32(-0x1000000),
+				"IgnoreLighting":              boolByte(false),
+				"TextIgnoreLegacyBugResolved": boolByte(false),
+				"Text":                        textOne + "\n" + textTwo + "\n" + textThree + "\n" + textFour,
 			}
 			data["x"], data["y"], data["z"] = int32(x), int32(y), int32(z)
 
