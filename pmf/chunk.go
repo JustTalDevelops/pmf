@@ -3,13 +3,13 @@ package pmf
 import "github.com/df-mc/dragonfly/server/block/cube"
 
 // PMFChunk is a PMF style chunk.
-type PMFChunk struct {
+type Chunk struct {
 	// subChunks is a map of Y level to sub chunk.
 	subChunks map[uint8][]byte
 }
 
 // Block gets a block name and properties from a position.
-func (p *PMFChunk) Block(pos cube.Pos) (string, map[string]interface{}) {
+func (p *Chunk) Block(pos cube.Pos) (string, map[string]interface{}) {
 	id := p.BlockID(pos)
 	meta := p.BlockMeta(pos)
 
@@ -19,7 +19,7 @@ func (p *PMFChunk) Block(pos cube.Pos) (string, map[string]interface{}) {
 }
 
 // BlockID gets a block ID at a position.
-func (p *PMFChunk) BlockID(pos cube.Pos) byte {
+func (p *Chunk) BlockID(pos cube.Pos) byte {
 	if pos.Y() > 127 || pos.Y() < 0 || pos.X() < 0 || pos.Z() < 0 || pos.X() > 255 || pos.Z() > 255 {
 		return 0
 	}
@@ -42,7 +42,7 @@ func (p *PMFChunk) BlockID(pos cube.Pos) byte {
 }
 
 // BlockMeta gets the metadata at a block at a position.
-func (p *PMFChunk) BlockMeta(pos cube.Pos) byte {
+func (p *Chunk) BlockMeta(pos cube.Pos) byte {
 	if pos.Y() > 127 || pos.Y() < 0 || pos.X() < 0 || pos.Z() < 0 || pos.X() > 255 || pos.Z() > 255 {
 		return 0
 	}

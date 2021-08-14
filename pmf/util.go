@@ -17,6 +17,14 @@ func getIndex(x, z int) int {
 	return (z << 4) + x
 }
 
+// boolByte returns 1 if the bool passed is true, or 0 if it is false.
+func boolByte(b bool) uint8 {
+	if b {
+		return 1
+	}
+	return 0
+}
+
 // readString reads a string from a buffer.
 func readString(buf *bytes.Buffer) string {
 	return string(buf.Next(int(readUint16(buf))))

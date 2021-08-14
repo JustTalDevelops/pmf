@@ -12,7 +12,7 @@ import (
 func main() {
 	start := time.Now()
 
-	pm, err := pmf.DecodePMF("example")
+	pm, err := pmf.DecodeLevel("example")
 	if err != nil {
 		panic(err)
 	}
