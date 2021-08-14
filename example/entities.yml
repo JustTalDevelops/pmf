@@ -1,0 +1,750 @@
+---
+- Air: 300
+  Dir: 2
+  Direction: 0
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Sunset
+  OnGround: 0
+  Pos:
+  - 149.000000
+  - 71.500000
+  - 82.062500
+  Rotation:
+  - 180.000000
+  - 0.000000
+  TileX: 148
+  TileY: 71
+  TileZ: 81
+  id: 83
+- Air: 300
+  Dir: 1
+  Direction: 1
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Bust
+  OnGround: 0
+  Pos:
+  - 225.937500
+  - 79.000000
+  - 92.000000
+  Rotation:
+  - 90.000000
+  - 0.000000
+  TileX: 226
+  TileY: 78
+  TileZ: 91
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Bust
+  OnGround: 0
+  Pos:
+  - 236.000000
+  - 74.000000
+  - 95.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 236
+  TileY: 73
+  TileZ: 96
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Creebet
+  OnGround: 0
+  Pos:
+  - 233.062500
+  - 73.500000
+  - 76.000000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 232
+  TileY: 73
+  TileZ: 76
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Creebet
+  OnGround: 0
+  Pos:
+  - 226.000000
+  - 73.500000
+  - 79.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 226
+  TileY: 73
+  TileZ: 80
+  id: 83
+- Air: 300
+  Dir: 1
+  Direction: 1
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Plant
+  OnGround: 0
+  Pos:
+  - 211.937500
+  - 74.500000
+  - 66.500000
+  Rotation:
+  - 90.000000
+  - 0.000000
+  TileX: 212
+  TileY: 74
+  TileZ: 66
+  id: 83
+- Air: 300
+  Dir: 1
+  Direction: 1
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Bomb
+  OnGround: 0
+  Pos:
+  - 211.937500
+  - 74.500000
+  - 58.500000
+  Rotation:
+  - 90.000000
+  - 0.000000
+  TileX: 212
+  TileY: 74
+  TileZ: 58
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Aztec2
+  OnGround: 0
+  Pos:
+  - 197.062500
+  - 74.500000
+  - 58.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 196
+  TileY: 74
+  TileZ: 58
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Pool
+  OnGround: 0
+  Pos:
+  - 234.000000
+  - 82.500000
+  - 146.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 234
+  TileY: 82
+  TileZ: 147
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Wasteland
+  OnGround: 0
+  Pos:
+  - 233.500000
+  - 83.500000
+  - 145.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 233
+  TileY: 83
+  TileZ: 146
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Bomb
+  OnGround: 0
+  Pos:
+  - 227.500000
+  - 78.500000
+  - 146.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 227
+  TileY: 78
+  TileZ: 147
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Wasteland
+  OnGround: 0
+  Pos:
+  - 228.500000
+  - 78.500000
+  - 146.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 228
+  TileY: 78
+  TileZ: 147
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Sunset
+  OnGround: 0
+  Pos:
+  - 105.062500
+  - 73.500000
+  - 200.000000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 104
+  TileY: 73
+  TileZ: 200
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Wanderer
+  OnGround: 0
+  Pos:
+  - 142.062500
+  - 73.000000
+  - 159.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 141
+  TileY: 72
+  TileZ: 159
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Bomb
+  OnGround: 0
+  Pos:
+  - 142.062500
+  - 72.500000
+  - 158.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 141
+  TileY: 72
+  TileZ: 158
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Wasteland
+  OnGround: 0
+  Pos:
+  - 142.062500
+  - 73.500000
+  - 158.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 141
+  TileY: 73
+  TileZ: 158
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: SkullAndRoses
+  OnGround: 0
+  Pos:
+  - 142.062500
+  - 73.000000
+  - 157.000000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 141
+  TileY: 72
+  TileZ: 157
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Aztec2
+  OnGround: 0
+  Pos:
+  - 142.062500
+  - 71.500000
+  - 156.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 141
+  TileY: 71
+  TileZ: 156
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Kebab
+  OnGround: 0
+  Pos:
+  - 142.062500
+  - 71.500000
+  - 157.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 141
+  TileY: 71
+  TileZ: 157
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Kebab
+  OnGround: 0
+  Pos:
+  - 142.062500
+  - 71.500000
+  - 158.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 141
+  TileY: 71
+  TileZ: 158
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Bomb
+  OnGround: 0
+  Pos:
+  - 143.500000
+  - 71.500000
+  - 159.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 143
+  TileY: 71
+  TileZ: 160
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Plant
+  OnGround: 0
+  Pos:
+  - 144.500000
+  - 71.500000
+  - 159.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 144
+  TileY: 71
+  TileZ: 160
+  id: 83
+- Air: 300
+  Dir: 2
+  Direction: 0
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Alban
+  OnGround: 0
+  Pos:
+  - 143.500000
+  - 71.500000
+  - 156.062500
+  Rotation:
+  - 180.000000
+  - 0.000000
+  TileX: 143
+  TileY: 71
+  TileZ: 155
+  id: 83
+- Air: 300
+  Dir: 1
+  Direction: 1
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Kebab
+  OnGround: 0
+  Pos:
+  - 144.937500
+  - 71.500000
+  - 158.500000
+  Rotation:
+  - 90.000000
+  - 0.000000
+  TileX: 145
+  TileY: 71
+  TileZ: 158
+  id: 83
+- Air: 300
+  Dir: 1
+  Direction: 1
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Courbet
+  OnGround: 0
+  Pos:
+  - 144.937500
+  - 71.500000
+  - 157.000000
+  Rotation:
+  - 90.000000
+  - 0.000000
+  TileX: 145
+  TileY: 71
+  TileZ: 156
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Pool
+  OnGround: 0
+  Pos:
+  - 115.062500
+  - 73.500000
+  - 201.000000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 114
+  TileY: 73
+  TileZ: 201
+  id: 83
+- Air: 300
+  Dir: 1
+  Direction: 1
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Sunset
+  OnGround: 0
+  Pos:
+  - 8.937500
+  - 90.500000
+  - 9.000000
+  Rotation:
+  - 90.000000
+  - 0.000000
+  TileX: 9
+  TileY: 90
+  TileZ: 8
+  id: 83
+- Air: 300
+  Dir: 1
+  Direction: 1
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Pool
+  OnGround: 0
+  Pos:
+  - 5.937500
+  - 90.500000
+  - 13.000000
+  Rotation:
+  - 90.000000
+  - 0.000000
+  TileX: 6
+  TileY: 90
+  TileZ: 12
+  id: 83
+- Air: 300
+  Dir: 1
+  Direction: 1
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Creebet
+  OnGround: 0
+  Pos:
+  - 5.937500
+  - 90.500000
+  - 16.000000
+  Rotation:
+  - 90.000000
+  - 0.000000
+  TileX: 6
+  TileY: 90
+  TileZ: 15
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Wasteland
+  OnGround: 0
+  Pos:
+  - 207.062500
+  - 74.500000
+  - 83.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 206
+  TileY: 74
+  TileZ: 83
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Alban
+  OnGround: 0
+  Pos:
+  - 207.062500
+  - 74.500000
+  - 84.500000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 206
+  TileY: 74
+  TileZ: 84
+  id: 83
+- Air: 300
+  Dir: 3
+  Direction: 3
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Creebet
+  OnGround: 0
+  Pos:
+  - 207.062500
+  - 73.500000
+  - 85.000000
+  Rotation:
+  - 270.000000
+  - 0.000000
+  TileX: 206
+  TileY: 73
+  TileZ: 85
+  id: 83
+- Air: 300
+  Dir: 2
+  Direction: 0
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Kebab
+  OnGround: 0
+  Pos:
+  - 208.500000
+  - 74.500000
+  - 83.062500
+  Rotation:
+  - 180.000000
+  - 0.000000
+  TileX: 208
+  TileY: 74
+  TileZ: 82
+  id: 83
+- Air: 300
+  Dir: 0
+  Direction: 2
+  FallDistance: 0.000000
+  Fire: 0
+  Motion:
+  - 0.000000
+  - 0.000000
+  - 0.000000
+  Motive: Kebab
+  OnGround: 0
+  Pos:
+  - 207.500000
+  - 74.500000
+  - 85.937500
+  Rotation:
+  - 0.000000
+  - 0.000000
+  TileX: 207
+  TileY: 74
+  TileZ: 86
+  id: 83
+...

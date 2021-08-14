@@ -1,0 +1,307 @@
+---
+- Text1: btw, ur stuck.
+  Text2: 'Remember to '
+  Text3: never come
+  Text4: here again. :)
+  id: Sign
+  x: 254
+  "y": 2
+  z: 116
+- Items: []
+  id: Chest
+  x: 252
+  "y": 2
+  z: 110
+- Items: []
+  id: Chest
+  x: 255
+  "y": 2
+  z: 110
+- Items: []
+  id: Chest
+  x: 252
+  "y": 2
+  z: 126
+- Items: []
+  id: Chest
+  x: 255
+  "y": 2
+  z: 126
+- Text1: Good luck! :)
+  Text2: you're gonna
+  Text3: need it. Take
+  Text4: ALL the chests.
+  id: Sign
+  x: 252
+  "y": 3
+  z: 118
+- Items: []
+  id: Chest
+  x: 126
+  "y": 71
+  z: 126
+- Items: []
+  id: Chest
+  x: 129
+  "y": 71
+  z: 126
+- Text1: parkour
+  Text2: to keep you
+  Text3: amused
+  Text4: <--
+  id: Sign
+  x: 252
+  "y": 3
+  z: 121
+- Text1: LOL, nobody
+  Text2: knows I made
+  Text3: this! :)
+  Text4: ""
+  id: Sign
+  x: 254
+  "y": 2
+  z: 118
+- Text1: complementory
+  Text2: cake!!!!!!!!
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 244
+  "y": 9
+  z: 118
+- Text1: Also, encourage
+  Text2: your friends to
+  Text3: come down here
+  Text4: ;)
+  id: Sign
+  x: 254
+  "y": 2
+  z: 114
+- Text1: My
+  Text2: Work
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 203
+  "y": 75
+  z: 80
+- Text1: and hope
+  Text2: nobody with
+  Text3: full iron armor
+  Text4: comes! :)
+  id: Sign
+  x: 252
+  "y": 3
+  z: 117
+- Text1: The illegal
+  Text2: secret stash
+  Text3: lol
+  Text4: ""
+  id: Sign
+  x: 199
+  "y": 77
+  z: 62
+- Text1: You know what
+  Text2: to do...
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 247
+  "y": 76
+  z: 91
+- Text1: My finest
+  Text2: materials
+  Text3: are imported
+  Text4: from England
+  id: Sign
+  x: 203
+  "y": 75
+  z: 81
+- Items: []
+  id: Chest
+  x: 126
+  "y": 71
+  z: 129
+- Items: []
+  id: Chest
+  x: 129
+  "y": 71
+  z: 129
+- Items: []
+  id: Chest
+  x: 128
+  "y": 72
+  z: 127
+- Items: []
+  id: Chest
+  x: 126
+  "y": 72
+  z: 128
+- Items: []
+  id: Chest
+  x: 128
+  "y": 72
+  z: 129
+- Text1: Let this be
+  Text2: 'warning. No '
+  Text3: come to our
+  Text4: lake. -Indians
+  id: Sign
+  x: 78
+  "y": 73
+  z: 38
+- Items: []
+  id: Chest
+  x: 122
+  "y": 96
+  z: 115
+- Items: []
+  id: Chest
+  x: 128
+  "y": 96
+  z: 121
+- Items: []
+  id: Chest
+  x: 138
+  "y": 96
+  z: 126
+- Items: []
+  id: Chest
+  x: 127
+  "y": 101
+  z: 128
+- Items: []
+  id: Chest
+  x: 134
+  "y": 100
+  z: 127
+- Items: []
+  id: Chest
+  x: 137
+  "y": 95
+  z: 134
+- Items: []
+  id: Chest
+  x: 123
+  "y": 93
+  z: 130
+- Items: []
+  id: Chest
+  x: 126
+  "y": 97
+  z: 115
+- Items: []
+  id: Chest
+  x: 122
+  "y": 101
+  z: 122
+- Items: []
+  id: Chest
+  x: 129
+  "y": 101
+  z: 130
+- Items: []
+  id: Chest
+  x: 122
+  "y": 93
+  z: 127
+- Items: []
+  id: Chest
+  x: 130
+  "y": 96
+  z: 117
+- Items: []
+  id: Chest
+  x: 119
+  "y": 97
+  z: 116
+- Items: []
+  id: Chest
+  x: 135
+  "y": 96
+  z: 128
+- Items: []
+  id: Chest
+  x: 135
+  "y": 101
+  z: 129
+- Items: []
+  id: Chest
+  x: 134
+  "y": 98
+  z: 135
+- Items: []
+  id: Chest
+  x: 123
+  "y": 99
+  z: 139
+- Text1: And here's a
+  Text2: crafting table!
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 252
+  "y": 3
+  z: 116
+- Text1: Skins
+  Text2: ""
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 228
+  "y": 82
+  z: 146
+- HasFinished: 0
+  IsInitialized: 0
+  Progress: 0
+  id: NetherReactor
+  x: 235
+  "y": 81
+  z: 147
+- Text1: rare items
+  Text2: ""
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 236
+  "y": 83
+  z: 145
+- Text1: Beds
+  Text2: ""
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 237
+  "y": 78
+  z: 142
+- Text1: books and
+  Text2: paintings
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 229
+  "y": 78
+  z: 146
+- Text1: Melons
+  Text2: ""
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 227
+  "y": 77
+  z: 141
+- Text1: rare item
+  Text2: glow stone
+  Text3: ""
+  Text4: ""
+  id: Sign
+  x: 229
+  "y": 77
+  z: 141
+- Text1: If your item is
+  Text2: not found here
+  Text3: ask and we will
+  Text4: take you up
+  id: Sign
+  x: 232
+...
