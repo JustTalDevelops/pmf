@@ -3,17 +3,17 @@ package pmf
 import (
 	"bytes"
 	"compress/gzip"
-	"fmt"
 	"github.com/df-mc/dragonfly/server/block/cube"
-	"github.com/df-mc/dragonfly/server/world"
-	"github.com/df-mc/dragonfly/server/world/chunk"
-	"github.com/df-mc/dragonfly/server/world/mcdb"
 	"github.com/go-gl/mathgl/mgl32"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"math"
 	"os"
+	"path"
 )
+
+// currentVersion is the current version of the PMF format.
+const currentVersion = 0x00
 
 // Level is the decoded level.pmf file.
 type Level struct {
@@ -42,105 +42,13 @@ type Level struct {
 	tiles []map[string]interface{}
 }
 
-// Convert converts the PMF level to a provider.
-func (p *Level) Convert(prov *mcdb.Provider) error {
-	settings := prov.Settings()
-	settings.Name = p.Name
-	settings.Spawn = cube.Pos{int(p.Spawn.X()), int(p.Spawn.Y()), int(p.Spawn.Z())}
-	settings.Time = int64(p.Time)
-	prov.SaveSettings(settings)
-
-	airRuntimeID, ok := chunk.StateToRuntimeID("minecraft:air", nil)
-	if !ok {
-		panic("could not find air runtime id")
-	}
-
-	chunks := make(map[world.ChunkPos]*chunk.Chunk)
-	for x := 0; x < 256; x++ {
-		for z := 0; z < 256; z++ {
-			for y := 0; y < 128; y++ {
-				name, properties, err := p.Block(cube.Pos{x, y, z})
-				if err != nil {
-					panic(err)
-				}
-				if name == "minecraft:air" {
-					continue
-				}
-
-				chunkPos := world.ChunkPos{int32(x >> 4), int32(z >> 4)}
-				ch, ok := chunks[chunkPos]
-				if !ok {
-					ch = chunk.New(airRuntimeID)
-					for x := uint8(0); x < 17; x++ {
-						for z := uint8(0); z < 17; z++ {
-							ch.SetBiomeID(x, z, 1) // The only biome in PM when PMF was a thing was plains.
-						}
-					}
-
-					chunks[chunkPos] = ch
-				}
-
-				rid, ok := chunk.StateToRuntimeID(name, properties)
-				if !ok {
-					panic(fmt.Errorf("could not find runtime id for state: %v, %v", name, properties))
-				}
-
-				ch.SetRuntimeID(uint8(x), int16(y), uint8(z), 0, rid)
-			}
-		}
-	}
-
-	blockEntities := make(map[world.ChunkPos][]map[string]interface{})
-	for _, t := range p.tiles {
-		tileType := t["id"]
-
-		switch tileType {
-		case "Sign":
-			x, y, z := t["x"].(int), t["y"].(int), t["z"].(int)
-
-			chunkPos := world.ChunkPos{int32(x >> 4), int32(z >> 4)}
-			if _, ok := blockEntities[chunkPos]; !ok {
-				blockEntities[chunkPos] = []map[string]interface{}{}
-			}
-
-			textOne, textTwo, textThree, textFour := t["Text1"].(string), t["Text2"].(string), t["Text3"].(string), t["Text4"].(string)
-
-			data := map[string]interface{}{
-				"id":                          "Sign",
-				"SignTextColor":               int32(-0x1000000),
-				"IgnoreLighting":              boolByte(false),
-				"TextIgnoreLegacyBugResolved": boolByte(false),
-				"Text":                        textOne + "\n" + textTwo + "\n" + textThree + "\n" + textFour,
-			}
-			data["x"], data["y"], data["z"] = int32(x), int32(y), int32(z)
-
-			blockEntities[chunkPos] = append(blockEntities[chunkPos], data)
-		}
-	}
-
-	for pos, ch := range chunks {
-		err := prov.SaveChunk(pos, ch)
-		if err != nil {
-			return err
-		}
-		err = prov.SaveBlockNBT(pos, blockEntities[pos])
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
-}
-
 // Block gets a block name and properties from a position.
 func (p *Level) Block(pos cube.Pos) (string, map[string]interface{}, error) {
 	c, err := p.Chunk(pos.X()>>4, pos.Z()>>4)
 	if err != nil {
 		return "", nil, err
 	}
-	name, properties := c.Block(pos)
-
-	return name, properties, nil
+	return c.Block(pos)
 }
 
 // BlockMeta gets a block's metadata at a position.
@@ -149,7 +57,7 @@ func (p *Level) BlockMeta(pos cube.Pos) (byte, error) {
 	if err != nil {
 		return 0, err
 	}
-	return c.BlockMeta(pos), nil
+	return c.BlockMeta(pos)
 }
 
 // BlockID gets a block ID at a position.
@@ -158,17 +66,17 @@ func (p *Level) BlockID(pos cube.Pos) (byte, error) {
 	if err != nil {
 		return 0, err
 	}
-	return c.BlockID(pos), nil
+	return c.BlockID(pos)
 }
 
-// Chunk gets a PMF chunk by it's X and Z and returns a PMFChunk.
+// Chunk gets a PMF chunk by its X and Z and returns a PMFChunk.
 func (p *Level) Chunk(x, z int) (*Chunk, error) {
 	chunkIndex := getIndex(x, z)
 	if c, ok := p.chunkCache[chunkIndex]; ok {
 		return c, nil
 	}
 
-	b, err := os.ReadFile(p.worldPath + "/" + chunkFilePath(x, z))
+	b, err := os.ReadFile(path.Join(p.worldPath, chunkFilePath(x, z)))
 	if err != nil {
 		return nil, err
 	}
@@ -205,9 +113,61 @@ func (p *Level) Close() {
 	p.locationMappings = nil
 }
 
-// DecodeLevel decodes a level.pmf file from it's path and returns a Level.
-func DecodeLevel(world string) (*Level, error) {
-	b, err := os.ReadFile(world + "/level.pmf")
+// NewLevel creates a new PMF level from a path.
+func NewLevel(folderPath, levelName string, seed uint32, width, height byte, spawn mgl32.Vec3) (*Level, error) {
+	f, err := os.Create(path.Join(folderPath, "level.pmf"))
+	if err != nil {
+		return nil, err
+	}
+
+	buf := &bytes.Buffer{}
+	buf.Write(make([]byte, 5))    // Header.
+	buf.WriteByte(currentVersion) // Version (0x00).
+
+	writeString(buf, levelName)
+	writeUint32(buf, seed)
+	writeUint32(buf, 0) // Time.
+
+	writeFloat32(buf, spawn.X())
+	writeFloat32(buf, spawn.Y())
+	writeFloat32(buf, spawn.Z())
+
+	buf.WriteByte(width)  // Width.
+	buf.WriteByte(height) // Height.
+
+	writeUint16(buf, 0) // Extra data length.
+
+	count := int(math.Pow(float64(width), 2))
+	locationMappings := make(map[int]uint16, count)
+	for index := 0; index < count; index++ {
+		writeUint16(buf, 0) // Location mapping.
+	}
+
+	_, err = f.Write(buf.Bytes())
+	if err != nil {
+		return nil, err
+	}
+	err = f.Close()
+	if err != nil {
+		return nil, err
+	}
+
+	return &Level{
+		Version:          currentVersion,
+		Name:             levelName,
+		Seed:             seed,
+		Spawn:            spawn,
+		Width:            width,
+		Height:           height,
+		chunkCache:       make(map[int]*Chunk),
+		locationMappings: locationMappings,
+		worldPath:        folderPath,
+	}, nil
+}
+
+// DecodeLevel decodes a level.pmf file from its path and returns a Level.
+func DecodeLevel(folderPath string) (*Level, error) {
+	b, err := os.ReadFile(path.Join(folderPath, "level.pmf"))
 	if err != nil {
 		return nil, err
 	}
@@ -234,7 +194,7 @@ func DecodeLevel(world string) (*Level, error) {
 		locationMappings[index] = readUint16(buf)
 	}
 
-	b, err = os.ReadFile(world + "/tiles.yml")
+	b, err = os.ReadFile(path.Join(folderPath, "tiles.yml"))
 	if err != nil {
 		return nil, err
 	}
@@ -250,12 +210,12 @@ func DecodeLevel(world string) (*Level, error) {
 		Name:             name,
 		Seed:             seed,
 		Time:             time,
-		Spawn:            mgl32.Vec3{spawnX, spawnY, spawnZ},
 		Width:            width,
 		Height:           height,
-		worldPath:        world,
-		chunkCache:       make(map[int]*Chunk),
+		worldPath:        folderPath,
 		locationMappings: locationMappings,
 		tiles:            tiles,
+		Spawn:            mgl32.Vec3{spawnX, spawnY, spawnZ},
+		chunkCache:       make(map[int]*Chunk),
 	}, err
 }
